@@ -5,4 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
     event.preventDefault();
     addTodo();
   });
+
+  if(isStorageExist()){
+    loadDataFromStorage();
+  }
+});
+
+document.addEventListener("ondatasaved", () => {
+  console.log("Data berhasil disimpan.");
+});
+
+document.addEventListener("ondataloaded", () => {
+  refreshDataFromTodos();
 });
